@@ -1,0 +1,221 @@
+<html lang = "en">
+    <head>
+        <meta charset = "UTF-8">
+        <meta name = "viewport" content = "width = device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content = "ie=edge">
+        <link rel="stylesheet" href="formcarry-form.css" />
+        
+        <title>Revelation</title>
+    </head>
+    
+    <body>
+        <ul id ="Menu_ul">
+            <li id = "Menu_li"><a href="file:///Users/anaceciliaguerra/Desktop/VueJs/home.html"><img id = "logoMini" src="https://www.clker.com/cliparts/e/z/G/F/y/3/black-and-white-sunglass-frames-md.png" alt = "logo"></a></li>
+            <li id = "Menu_li"><a href="file:///Users/anaceciliaguerra/Desktop/VueJs/home.html">Sign Out</a></li>
+        </ul>
+
+       <br>
+        <table style="width:50%">
+        <tr>
+            <td>
+                <h2>Genre:</h2>
+
+                <div class="custom-select">
+                    <select id = "myDropdown" name ="options">
+                        <option value="">Open this select menu</option>
+                        <option value="Horror">Horror</option>
+                        <option value="Romance">Romance</option>
+                        <option value="Comedy">Comedy</option>
+                        <option value="Fantasy">Fantasy</option>
+                        <option value="Science Fiction">Science Fiction</option>
+                        <option value="Action">Action</option>
+                    </select>
+                </div>
+            </td>
+            <td>
+                <h2>Type of content: </h2>
+
+                <div class="custom-select">
+                   <select id = "myDropdown2" name ="options">
+                        <option value="">Open this select menu</option>
+                        <option value="Movie">Movie</option>
+                        <option value="Series">Series</option>
+                    </select>
+                </div>
+            </td>   
+            <td>
+                <form>
+                    <input type="button" id = "buttonFilter"></button>
+                    <imput type="button" onclick="getShow()" value = "Filter">
+                </form>
+            </td> 
+        </tr>
+        </table>
+
+        <br>
+        <table>
+            <!--show poster [0-4]-->
+            <tr>
+                <td><img src="" id="showImg1" width="200" height="300"></td>
+                <td><img src="" id="showImg2" width="200" height="300"></td>
+                <td><img src="" id="showImg3" width="200" height="300"></td>
+                <td><img src="" id="showImg4" width="200" height="300"></td>
+                <td><img src="" id="showImg5" width="200" height="300"></td>
+            </tr>
+    
+            <!-- show poster [5-9]-->
+            <tr>
+                <td><img src="" id="showImg6" width="200" height="300"></td>
+                <td><img src="" id="showImg7" width="200" height="300"></td>
+                <td><img src="" id="showImg8" width="200" height="300"></td>
+                <td><img src="" id="showImg9" width="200" height="300"></td>
+                <td><img src="" id="showImg10" width="200" height="300"></td>
+            </tr>
+        </table>
+    </td>
+    <!--PELI-> https://api.themoviedb.org/3/discover/movie?api_key=8569488978d7c948011c66a22ea99ff0&with_genres=28 -->
+    <!--SERIE->https://api.themoviedb.org/3/discover/tv?api_key=8569488978d7c948011c66a22ea99ff0&with_genres=10759 -->
+
+    </body>
+    
+    <style>   
+
+    #Menu_ul 
+    {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        overflow: hidden;
+        background-color: black;
+    }
+
+    #Menu_li 
+    {
+        float: left;
+    }
+
+    #Menu_li a 
+    {
+        display: block;
+        color: white;
+        text-align: center;
+        padding: 14px 20px;
+        text-decoration: none;
+    }
+
+    #Menu_li a:hover 
+    {
+        background-color:grey;
+    }
+    #logoMini {
+        height: 15px;
+        width: 40px;
+    }
+    .custom-select {
+  min-width: 350px;
+  position: relative;
+}
+
+.custom-select select {
+  appearance: none;
+  width: 100%;
+  font-size: 1.15rem;
+  padding: 0.675em 6em 0.675em 1em;
+  background-color: #fff;
+  border: 1px solid #caced1;
+  border-radius: 0.25rem;
+  color: #000;
+  cursor: pointer;
+}
+
+.custom-select::before,
+.custom-select::after {
+  --size: 0.3rem;
+  content: "";
+  position: absolute;
+  right: 1rem;
+  pointer-events: none;
+}
+
+.custom-select::before {
+  border-left: var(--size) solid transparent;
+  border-right: var(--size) solid transparent;
+  border-bottom: var(--size) solid black;
+  top: 40%;
+}
+
+.custom-select::after {
+  border-left: var(--size) solid transparent;
+  border-right: var(--size) solid transparent;
+  border-top: var(--size) solid black;
+  top: 55%;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+#idDropDown {
+  display: grid;
+  place-items: center;
+}
+#buttonFilter{
+  display: block;
+  margin-top: 50px;
+  padding: 15px 30px;
+  border-radius: 8px;
+  border-color: transparent;
+  background-color: black;
+  color: #fff;
+  font-weight: 700;
+  font-size: 18px;
+
+}
+
+img{
+    width: 1425px; 
+    height: 545px; 
+    background: transparent;
+    opacity: 0.2;
+}
+body { 
+  background-image: url('https://thehill.com/wp-content/uploads/sites/2/2022/05/e92ed228a6924420a8963bdc6c9ddef1.jpg?w=1280&h=720&crop=1');
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center bottom; 
+  background-size: 1425px 535px;
+  background-color: rgba(255, 255, 255, 0.695);
+  background-blend-mode: lighten;
+
+}
+    </style>
+        <script>
+             document.getElementById('myDropdown').addEventListener('change', function() 
+             {
+                var selectedValue = this.value;
+            });
+            document.getElementById('myDropdown2').addEventListener('change', function() 
+             {
+                var selectedValue = this.value;
+            });
+            function getShow(){
+                let typeShow = document.getElementById("showType").value
+                let typeGenre = document.getElementById("genreType").value
+    
+                fetch("https://pokeapi.co/api/v2/pokemon/" + pokename)
+                    .then( (response) => response.json())
+                    .then( (data) => parsePoke(data))
+                    .catch( (error) => console.log(error))
+            }
+    
+            function parsePoke(json){
+                let pokemonImage = json.sprites.front_default
+                let pokemonImage2 = json.sprites.front_shiny
+                let poketype = json.types[0].type.name
+                console.log(poketype)
+                document.getElementById("pokeimg").src = pokemonImage
+                document.getElementById("pokeimg2").src = pokemonImage2
+                document.getElementById("poketype").innerText = "Type: " + poketype
+            }
+        </script>
+</html>
